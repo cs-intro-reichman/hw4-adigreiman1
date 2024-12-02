@@ -36,5 +36,6 @@ public class TesterMyString {
         String verdict = passed == num_tests ? "(Passed)": "Failed";
 
         System.out.println("Passed " + passed + "/" + num_tests + " tests " + verdict);
+    
     }
 }
