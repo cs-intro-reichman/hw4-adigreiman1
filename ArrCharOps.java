@@ -36,8 +36,10 @@ public class ArrCharOps {
     /** Returns the char value at the specified index. Assume that the array is non-empty.
      */
     public static char charAt(char[] arr, int index) {
-        return arr[index];
+        while (arr.length >= index){
     }
+    return arr[index];
+}
     
     /** If the two arrays have the same value in every index, 
      *  returns true; Otherwise returns false.
@@ -53,8 +55,8 @@ public class ArrCharOps {
                     return false ;
                 }
     }
-    return true;
 }
+return true;
     }
     
 
@@ -62,8 +64,8 @@ public class ArrCharOps {
      *  If no such character is found, returns -1.
      */
     public static int indexOf(char[] arr, char ch) {
+
         for (int i = 0; i < arr.length; i++) {
-        
             if (arr[i]==ch){
                 return i ;
             }
@@ -74,7 +76,7 @@ public class ArrCharOps {
     /** Same as indexOf(char[], char), but starts the search in the given index.
      */
     public static int indexOf(char[] arr, char ch, int fromIndex) {
-       if (fromIndex <arr.length){
+       while (fromIndex <arr.length){
        for (int i = fromIndex; i < arr.length; i++) {
         
             if (arr[i]==ch){
@@ -92,7 +94,7 @@ public class ArrCharOps {
      */
     public static int lastIndexOf(char[] arr, char ch) {
       
-            for (int i = arr.length-1; i <0; i--) {
+            for (int i = arr.length-1; i >=0; i--) {
             
                 if (arr[i]==ch){
                     return i ;
@@ -146,7 +148,7 @@ public class ArrCharOps {
         return 0;
        }
        long hashCode =0; 
-       for (int i = 0; i <= arr.length-2; i++) {
+       for (int i = 0; i < arr.length-1; i++) {
             hashCode += Math.pow(arr[i]*7, (arr.length-1)-(i+1));
        
     }
