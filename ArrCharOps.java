@@ -36,8 +36,6 @@ public class ArrCharOps {
     /** Returns the char value at the specified index. Assume that the array is non-empty.
      */
     public static char charAt(char[] arr, int index) {
-        while (arr.length >= index){
-    }
     return arr[index];
 }
     
@@ -64,11 +62,12 @@ return true;
      *  If no such character is found, returns -1.
      */
     public static int indexOf(char[] arr, char ch) {
-
+        if (arr.length>0){
         for (int i = 0; i < arr.length; i++) {
             if (arr[i]==ch){
                 return i ;
             }
+        }
     }
     return -1;
 }
@@ -76,8 +75,8 @@ return true;
     /** Same as indexOf(char[], char), but starts the search in the given index.
      */
     public static int indexOf(char[] arr, char ch, int fromIndex) {
-       while (fromIndex <arr.length){
-       for (int i = fromIndex; i < arr.length; i++) {
+       if (fromIndex <= arr.length){
+       for (int i = fromIndex; i <= arr.length-1; i++) {
         
             if (arr[i]==ch){
                 return i ;
@@ -93,13 +92,14 @@ return true;
      *  If no such character is found, returns -1.
      */
     public static int lastIndexOf(char[] arr, char ch) {
-      
+        if (arr.length!=0){
             for (int i = arr.length-1; i >=0; i--) {
             
                 if (arr[i]==ch){
                     return i ;
                 }
         }
+    }
         return -1;
     }
 
