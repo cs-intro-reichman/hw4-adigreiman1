@@ -125,12 +125,13 @@ return true;
      */     
     public static char[] subArray(char[] arr, int beginIndex, int endIndex) {
         char[] newArr = new char[endIndex-beginIndex];
-        while (endIndex>beginIndex && beginIndex>=0 && arr.length >= endIndex){
+        if (endIndex>beginIndex && beginIndex>=0 && arr.length >= endIndex){
                 for (int i = beginIndex; i < endIndex; i++) {
                    newArr[i-beginIndex] = arr[i];
             }
+            return newArr;
         }
-        return newArr;
+        return null;
 }
         
         
@@ -148,12 +149,16 @@ return true;
         return 0;
        }
        long hashCode =0; 
-       for (int i = 0; i < arr.length-1; i++) {
-            hashCode += Math.pow(arr[i]*7, (arr.length-1)-(i+1));
+       long power = 1;
+       int n = arr.length-1;
+            for (int i = n; i >= 0; i--) {
+                hashCode += arr[i] * power;
+                power *= 7; 
+            }
+            return hashCode;
+        }
        
-    }
-    return hashCode;
-}
+    
 
     /**
      * Compares the two strings lexicographically.
