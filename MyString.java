@@ -55,5 +55,3 @@ public class MyString {
     return false;
 }
 }
-// str1 = hello
-// str2 = low
